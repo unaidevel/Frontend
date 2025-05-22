@@ -473,6 +473,7 @@ Description: Gerold - Personal Portfolio HTML5 Template
 			});
 		}
 
+
 		// Accordion Js
 		if ($(".accordion-item").length > 0) {
 			$(".accordion-item .faq-title").on("click", function () {
