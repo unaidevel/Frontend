@@ -273,10 +273,10 @@ I may not come from a traditional background, but I build with the mindset of a 
                                  <h5 class="title">Backend Developer</h5>
                                  <div class="desc">
                                     <p>
-                                       As a backend developer, I focus on building robust APIs, designing efficient database schemas, and writing maintainable Python code. 
+                                       As a backend developer, I focus on building robust APIs, 
+                                       </p><p>designing efficient database schemas, and writing maintainable Python code. </p>
                                        
-                                    </p>
-                                 </div>
+                                 </div>   
                               </div>
                               <div class="about-images">
                                  <img src="assets/img/hero/about-1.png" alt="Images" />
@@ -699,7 +699,7 @@ It’s designed to be scalable and ready to integrate with a frontend or mobile 
             </div>
             <div class="portfolio_navigation">
                <div class="navigation_item prev-project">
-                  <a href="#" class="project">
+                  <a href="#portfolio-wrapper1" class="project">
                      <i class="fal fa-arrow-left"></i>
                      <div class="nav_project">
                         <div class="label">Previous Project</div>
@@ -922,7 +922,7 @@ It’s designed to be scalable and ready to integrate with a frontend or mobile 
          <div class="row">
             <div class="col-md-12 text-center">
                <div class="footer-logo-box">
-                  <a href="#"><img src="assets/img/logo/UnaiMunoz_logo_black.png" alt="" /></a>
+                  <a href="#"><img src="assets/img/logo/UnaiMunoz_logo_white.png" alt="" /></a>
                </div>
                <div class="footer-menu">
                   <nav>
@@ -969,7 +969,7 @@ It’s designed to be scalable and ready to integrate with a frontend or mobile 
    <script src="https://cdn.jsdelivr.net/npm/magnific-popup/dist/jquery.magnific-popup.min.js"></script> -->
 
 <!-- Inicialización del popup -->
-<script>
+<!-- <script>
   document.querySelectorAll('.navigation_item.next-project a').forEach(link => {
     link.addEventListener('click', function (e) {
       e.preventDefault();
@@ -992,7 +992,56 @@ It’s designed to be scalable and ready to integrate with a frontend or mobile 
       }, 300); // Espera 300ms para evitar solapamiento
     });
   });
+</script> -->
+
+
+<!-- This script enables smooth navigation between modal popups using Magnific Popup. 
+When a user clicks a .project link it prevents the default action, closes the current popup, 
+and opens the target popup specified in the links href. -->
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // Cuando haces click en "Next Project"
+    document.querySelectorAll('.next-project a').forEach(link => {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        $.magnificPopup.close();
+        const targetId = this.getAttribute('href');
+        setTimeout(() => {
+          $.magnificPopup.open({
+            items: {
+              src: targetId,
+              type: 'inline'
+            },
+            mainClass: 'zoom-anim-dialog'
+          });
+        }, 300);
+      });
+    });
+
+    // Cuando haces click en "Prev Project"
+    document.querySelectorAll('.prev-project a').forEach(link => {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        $.magnificPopup.close();
+        const targetId = this.getAttribute('href');
+        setTimeout(() => {
+          $.magnificPopup.open({
+            items: {
+              src: targetId,
+              type: 'inline'
+            },
+            mainClass: 'zoom-anim-dialog'
+          });
+        }, 300);
+      });
+    });
+  });
 </script>
+
+
+
+
 </body>
 </body>
 
