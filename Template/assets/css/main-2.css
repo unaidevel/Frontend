@@ -469,6 +469,11 @@
 .works-section {
 	background: var(--tj-theme-accent-1);
 }
+
+.works-content-item {
+  flex: 1;
+  min-width: 0; /* ayuda con el ajuste si el contenido es largo */
+}
 .works-content-area {
 	display: flex;
 	justify-content: space-between;
@@ -488,7 +493,7 @@
 .works-content-area .works-content-item .works-content-box {
 	position: relative;
 	z-index: 2;
-	padding-left: 40px;
+	padding-left: 60px;
 }
 .works-content-area .works-content-item .works-content-box::before {
 	position: absolute;
