@@ -832,7 +832,8 @@ body.loaded {
 }
 
 .tj-header-area .logo-box {
-	max-width: 60px;
+	margin-top: -10px;
+	max-width: 36px;
 	width: 100%;
 	margin-right: 35px;
 }
