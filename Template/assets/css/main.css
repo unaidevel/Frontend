@@ -937,7 +937,9 @@ body.loaded {
 }
 
 .full-width-paragraph {
-    width: 120%;
+    width: 100%;
+	max-width: 650px;
+
     /* You might also want to remove default margins if they are causing issues */
     margin-left: 0;
     margin-right: 0;
