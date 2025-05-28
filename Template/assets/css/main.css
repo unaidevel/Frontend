@@ -935,6 +935,15 @@ body.loaded {
 .tj-header-area .header-menu ul > li.has-dropdown:hover > a:after {
 	content: "\f068";
 }
+
+.full-width-paragraph {
+    width: 120%;
+    /* You might also want to remove default margins if they are causing issues */
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+
 .tj-header-area
 	.header-menu
 	ul
