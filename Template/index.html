@@ -791,8 +791,8 @@ It’s designed to be scalable and ready to integrate with a frontend or mobile 
                            </p>
                         </div>
                         <div class="tj-contact-form style-2">
-                           <form id="contact-form" name="contact" method="POST" data-netlify="true">
-                              <input type="hidden" name="form-name" value="contact" />
+                           <form id="contact-form" name="contact" method="POST">
+                              <input type="hidden" name="form-name" value="contact"/>
                               <div class="form_group">
                                  <input type="text" name="conName" id="conName" placeholder="First name"
                                     autocomplete="off" />
@@ -1029,36 +1029,36 @@ and opens the target popup specified in the links href. -->
 
 
 
-
-<!-- <script>
+<script>
   const form = document.getElementById("contact-form");
 
   form.addEventListener("submit", function (event) {
-    event.preventDefault();
+    event.preventDefault(); // Evita recarga
 
     const data = new FormData(form);
-    data.append("form-name", "contact"); // Esto es CLAVE
 
     fetch("/", {
       method: "POST",
       body: data,
+      headers: { "Accept": "application/x-www-form-urlencoded" },
     })
-      .then((res) => {
-        if (res.ok) {
+      .then((response) => {
+        if (response.ok) {
           const modalSuccess = new bootstrap.Modal(document.getElementById("message_sent"));
           modalSuccess.show();
           form.reset();
         } else {
-          throw new Error("Error en la respuesta");
+          throw new Error("Error en el envío");
         }
       })
-      .catch((err) => {
+      .catch(() => {
         const modalFail = new bootstrap.Modal(document.getElementById("message_fail"));
         modalFail.show();
-        console.error("Error al enviar formulario:", err);
       });
   });
-</script> -->
+</script>
+
+
 
 
 
