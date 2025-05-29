@@ -260,6 +260,7 @@
                            </div>
                         </form>
                      </div>
+                     <small id="form-message" style="display: none; color: rgb(94, 20, 206); margin-top: 10px;"></small>
                   </div>
                </div>
                <div class="col-lg-5 offset-lg-1 col-md-5 d-flex flex-wrap align-items-center order-1 order-md-2">
@@ -354,6 +355,57 @@
    <script src="assets/js/validate.min.js"></script>
    <script src="assets/js/meanmenu.js"></script>
    <script src="assets/js/main.js"></script>
+
+
+
+
+
+
+<script>
+  const form = document.getElementById("contact-form");
+  const messageBox = document.getElementById("form-message");
+
+  form.addEventListener("submit", function(event) {
+    event.preventDefault(); // No recargues
+
+    const name = form.querySelector('input[name="conName"]').value.trim();
+    const lastName = form.querySelector('input[name="conLName"]').value.trim();
+    const email = form.querySelector('input[name="conEmail"]').value.trim();
+    const phone = form.querySelector('input[name="conPhone"]').value.trim();
+    const message = form.querySelector('textarea[name="conMessage"]').value.trim();
+
+    // Validación simple
+    if (!name || !lastName || !email || !message) {
+      messageBox.style.color = "red";
+      messageBox.textContent = "Please fill in all required fields.";
+      messageBox.style.display = "block";
+      return;
+    }
+
+    const data = new FormData(form);
+
+    fetch("/", {
+      method: "POST",
+      body: data,
+      headers: { "Accept": "application/x-www-form-urlencoded" }
+    })
+    .then(response => {
+      if (response.ok) {
+        messageBox.style.color = "purple";
+        messageBox.textContent = "Message sent successfully. Thank you!";
+        messageBox.style.display = "block";
+        form.reset();
+      } else {
+        throw new Error("Submission error");
+      }
+    })
+    .catch(() => {
+      messageBox.style.color = "red";
+      messageBox.textContent = "Oops, something went wrong. Try again.";
+      messageBox.style.display = "block";
+    });
+  });
+</script>
 </body>
 
 </html>
