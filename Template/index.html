@@ -35,7 +35,7 @@
 
 <body>
    <!-- Preloader Area Start -->
-   <div class="preloader">
+   <!-- <div class="preloader">
       <svg viewBox="0 0 1000 1000" preserveAspectRatio="none">
          <path id="preloaderSvg" d="M0,1005S175,995,500,995s500,5,500,5V0H0Z"></path>
       </svg>
@@ -51,7 +51,7 @@
             <span>g</span>
          </div>
       </div>
-   </div>
+   </div> -->
    <!-- Preloader Area End -->
 
    <!-- start: Back To Top -->
@@ -794,7 +794,8 @@ It’s designed to be scalable and ready to integrate with a frontend or mobile 
                            </p>
                         </div>
                         <div class="tj-contact-form style-2">
-                           <form id="contact-form">
+                           <form id="contact-form" name="contact" method="POST" data-netlify="true" netlify>
+                              <input type="hidden" name="form-name" value="contact" />
                               <div class="form_group">
                                  <input type="text" name="conName" id="conName" placeholder="First name"
                                     autocomplete="off" />
@@ -840,7 +841,7 @@ It’s designed to be scalable and ready to integrate with a frontend or mobile 
                               <a href="mailto:unai.devel@gmail.com">unai.devel@gmail.com</a>
                            </li>
                            <li class="wow fadeInRight" data-wow-delay=".5s">
-                              <p>Burlada, Navarra, Spain</p>
+                              <p>Pamplona, Navarra, Spain</p>
                            </li>
                         </ul>
                         <ul class="ul-reset social-icons style-3 wow fadeInRight" data-wow-delay=".6s">
@@ -1029,6 +1030,37 @@ and opens the target popup specified in the links href. -->
   });
 </script>
 
+
+
+
+<script>
+  const form = document.getElementById("contact-form");
+
+  form.addEventListener("submit", function (event) {
+    event.preventDefault(); // Evita el reload automático
+
+    const data = new FormData(form);
+
+    fetch("/", {
+      method: "POST",
+      body: data,
+    })
+      .then((res) => {
+        if (res.ok) {
+          const modalSuccess = new bootstrap.Modal(document.getElementById("message_sent"));
+          modalSuccess.show();
+          form.reset();
+        } else {
+          throw new Error("Error en la respuesta");
+        }
+      })
+      .catch((err) => {
+        const modalFail = new bootstrap.Modal(document.getElementById("message_fail"));
+        modalFail.show();
+        console.error("Error al enviar formulario:", err);
+      });
+  });
+</script>
 
 
 
