@@ -811,6 +811,7 @@
                                     </span>
                                  </button>
                               </div>
+                              <small id="form-message" style="display: none; color: rgb(255, 255, 255); margin-top: 10px;"></small>
                            </form>
                         </div>
                      </div>
@@ -855,7 +856,7 @@
       <!-- CONTACT SECTION END -->
 
       <!-- BEGIN: Contact Form Success Modal Message -->
-      <div class="modal contact_modal" id="message_sent" tabindex="-1">
+      <!-- <div class="modal contact_modal" id="message_sent" tabindex="-1">
          <div class="modal-dialog">
             <div class="modal-content">
                <div class="modal-header">
@@ -871,11 +872,11 @@
                </div>
             </div>
          </div>
-      </div>
+      </div> -->
       <!-- END: Contact Form Success Modal Message -->
 
       <!-- BEGIN: Contact Form Fail Modal Message -->
-      <div class="modal contact_modal failed" id="message_fail" tabindex="-1">
+      <!-- <div class="modal contact_modal failed" id="message_fail" tabindex="-1">
          <div class="modal-dialog">
             <div class="modal-content">
                <div class="modal-header">
@@ -891,7 +892,7 @@
                </div>
             </div>
          </div>
-      </div>
+      </div> -->
       <!-- END: Contact Form Fail Modal Message End -->
    </main>
 
@@ -1018,6 +1019,54 @@ and opens the target popup specified in the links href. -->
   });
 </script>
 
+
+
+
+<script>
+  const form = document.getElementById("contact-form");
+  const messageBox = document.getElementById("form-message");
+
+  form.addEventListener("submit", function(event) {
+    event.preventDefault(); // No recargues
+
+    const name = form.querySelector('input[name="conName"]').value.trim();
+    const lastName = form.querySelector('input[name="conLName"]').value.trim();
+    const email = form.querySelector('input[name="conEmail"]').value.trim();
+    const phone = form.querySelector('input[name="conPhone"]').value.trim();
+    const message = form.querySelector('textarea[name="conMessage"]').value.trim();
+
+    // Validación simple
+    if (!name || !lastName || !email || !message) {
+      messageBox.style.color = "red";
+      messageBox.textContent = "Please fill in all required fields.";
+      messageBox.style.display = "block";
+      return;
+    }
+
+    const data = new FormData(form);
+
+    fetch("/", {
+      method: "POST",
+      body: data,
+      headers: { "Accept": "application/x-www-form-urlencoded" }
+    })
+    .then(response => {
+      if (response.ok) {
+        messageBox.style.color = "white";
+        messageBox.textContent = "Message sent successfully. Thank you!";
+        messageBox.style.display = "block";
+        form.reset();
+      } else {
+        throw new Error("Submission error");
+      }
+    })
+    .catch(() => {
+      messageBox.style.color = "red";
+      messageBox.textContent = "Oops, something went wrong. Try again.";
+      messageBox.style.display = "block";
+    });
+  });
+</script>
 
 
 
