@@ -936,11 +936,22 @@ body.loaded {
 	content: "\f068";
 }
 
-.full-width-paragraph {
+.full-width-paragraph_es {
     width: 100%;
-	max-width: 650px;
+	max-width: 750px;
 
-    /* You might also want to remove default margins if they are causing issues */
+    margin-top: 12px;
+    margin-left: 0;
+    margin-right: 0;
+	margin-bottom: 90px;
+
+  }
+
+.full-width-paragraph_en {
+    width: 100%;
+	max-width: 400px;
+
+    margin-top: 12px;
     margin-left: 0;
     margin-right: 0;
   }
