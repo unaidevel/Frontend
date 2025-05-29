@@ -791,7 +791,7 @@ It’s designed to be scalable and ready to integrate with a frontend or mobile 
                            </p>
                         </div>
                         <div class="tj-contact-form style-2">
-                           <form id="contact-form" name="contact" method="POST" data-netlify="true">
+                           <form id="contact-form" name="contact" method="POST" netlify>
                               <input type="hidden" name="form-name" value="contact" />
                               <div class="form_group">
                                  <input type="text" name="conName" id="conName" placeholder="First name"
@@ -1033,30 +1033,32 @@ and opens the target popup specified in the links href. -->
 <script>
   const form = document.getElementById("contact-form");
 
-  form.addEventListener("submit", function (event) {
-    event.preventDefault(); // Evita el reload automático
+form.addEventListener("submit", function (event) {
+  event.preventDefault(); // Detiene envío por defecto
 
-    const data = new FormData(form);
+  const data = new FormData(form);
 
-    fetch("/", {
-      method: "POST",
-      body: data,
+  fetch("/", {
+    method: "POST",
+    body: data,
+    headers: { "Accept": "application/json" }, // importante para evitar redirect
+  })
+    .then((res) => {
+      if (res.ok) {
+        const modalSuccess = new bootstrap.Modal(document.getElementById("message_sent"));
+        modalSuccess.show();
+        form.reset();
+      } else {
+        throw new Error("Error en la respuesta");
+      }
     })
-      .then((res) => {
-        if (res.ok) {
-          const modalSuccess = new bootstrap.Modal(document.getElementById("message_sent"));
-          modalSuccess.show();
-          form.reset();
-        } else {
-          throw new Error("Error en la respuesta");
-        }
-      })
-      .catch((err) => {
-        const modalFail = new bootstrap.Modal(document.getElementById("message_fail"));
-        modalFail.show();
-        console.error("Error al enviar formulario:", err);
-      });
-  });
+    .catch((err) => {
+      const modalFail = new bootstrap.Modal(document.getElementById("message_fail"));
+      modalFail.show();
+      console.error("Error al enviar formulario:", err);
+    });
+});
+
 </script>
 
 
