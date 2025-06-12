@@ -240,8 +240,8 @@
                               <div class="desc">
                                  <p class="lead">
                                     Desde que comencé mi viaje en el desarrollo backend, me he dedicado a dominar Python y sus
-                                    framework principales, Django, FastAPI y Flask. He construido proyectos reales desde cero, incluyendo sistemas 
-                                    de autenticación, gestores de tareas y aplicaciones impulsadas por APIs.
+                                    framework principales, Django, FastAPI y Flask. He construido proyectos reales desde cero, incluyendo sistemas de autenticación, 
+                                    APIs RESTful bien estructuradas, y aplicaciones con lógica de negocio compleja.
                                     He aprendido a través de la experiencia práctica, la práctica constante y una pasión 
                                     por el código limpio y escalable. Puede que no venga de un entorno tradicional, 
                                     pero construyo con la mentalidad de un profesional.
@@ -299,12 +299,12 @@
                            <h3 class="title"><button data-mfp-src="#portfolio-wrapper1"
                                  class="modal-popup">API Cine con FastAPI</button></h3>
                            <p class="desc">
-                              El proyecto es una API RESTful construida con FastAPI.
+                              Esta API RESTful ha sido construida con el framework FastAPI.
                               Permite a los usuarios explorar películas, géneros y horarios a través de endpoints bien estructurados.
-                              Se centra en una arquitectura limpia, autenticación segura basada en tokens y 
-                              diseño de base de datos relacional con PostgreSQL. Está diseñado para ser escalable y 
-                              listo para integrarse con un frontend o una app móvil. 
-                              Contenerizado con Docker para un despliegue sencillo.
+                              Se centra en una arquitectura limpia, autenticación segura basada en tokens JSON Web y 
+                              diseño de base de datos relacional con PostgreSQL. La API está integrada en un frontend, lista para demostrar su uso.
+                              Está diseñado para ser escalable y lista para integrarse con cualquier frontend o app móvil.
+                              Preparado con Docker para un despliegue sencillo y un uso global.
                            </p>
                         </div>
                         <ul class="project_tags">
@@ -338,9 +338,9 @@
                            <h3 class="title" style="white-space: nowrap;"><button data-mfp-src="#portfolio-wrapper2"
                                  class="modal-popup">Finanzas Personales</button></h3>
                            <p class="desc">
-                              API RESTful construida con Django REST Framework para ayudar a los usuarios a gestionar sus finanzas personales.
-                              Soporta el seguimiento de ingresos y gastos, planificación de presupuestos e informes financieros, etcétera.
-                              Las características incluyen autenticación JWT, operaciones CRUD y validación de datos para garantizar precisión y seguridad.
+                              El framework utilizado para construir esta API RESTful ha sido Django REST Framework. Creada para ayudar a los usuarios a gestionar sus finanzas personales.
+                              Soporta el seguimiento de ingresos y gastos individuales o concurrentes, planificación de presupuestos, objetivos e informes financieros entre otras características.
+                              Cuenta con autenticación basada en JSON Web token y validación de datos estricta para garantizar precisión y seguridad en todo momento.
                            </p>
                         </div>
                         <ul class="project_tags">
@@ -486,8 +486,8 @@
                   <h2 class="title">Servicio de Reserva de Cine FastAPI</h2>
                   <div class="desc">
                      <p>
-                        API Restful limpia y eficiente que entrega datos y horarios de películas con seguridad y escalabilidad en mente.
-                        Construido para proporcionar una base sólida backend para aplicaciones relacionadas con el cine.
+                        Con esta API RESTful he buscado la eficiencia en la entrega de datos con seguridad y escabilidad siempre en mente.
+                        Esta lista para proporcionar una base sólida backend para aplicaciones relacionadas con el cine. Esta lista para implementar sistemas de pago.
                      </p>
                   </div>
                   <a href="https://cinema.unaimunoz.dev/"  class="btn tj-btn-primary" target="_blank" rel="noopener noreferrer" >¡Visítalo!<i class="fal fa-arrow-right"></i></a>
@@ -529,11 +529,11 @@
                <h2 class="title">Descripción del Proyecto</h2>
                <div class="desc">
                   <p>
-                     Esta es una API RESTful de gestión de reservas de cine diseñada como un proyecto de muestra
-                     para demostrar habilidades backend. Proporciona autenticación de usuario segura con JWT,
-                     permitiendo a los usuarios explorar películas, gestionar sesiones, hacer reservas de asientos y
-                     rastrear su historial de reservas. La API también soporta el bloqueo de asientos para evitar dobles
-                     reservas e incluye un sistema de reseñas para películas.
+                     La gestión de reservas de cine cuenta con varios desafios a la hora de diseñar el backend. 
+                     La reserva de asientos y la prevención de reservas duplicadas ha estado en mente en todo momento.
+                     Se permite a los usuarios explorar películas y sus detalles, hacer reservas de asientos, asi como rastrear el historial completo de reservas.
+                     Incluye un sistema de reseñas para películas. La mayoría de los endpoints de películas y sesiones están protegidos para administradores o miembros de staff.
+                     Cuenta con validación por serializadores y validación extra para aportar seguridad al sistema.
                   </p>
                </div>
             </div>
@@ -601,11 +601,8 @@
                   <h2 class="title">API de Finanzas Personales Django</h2>
                   <div class="desc">
                      <p>
-                        Un backend fiable y seguro para gestionar finanzas personales.
-                        Esta API RESTful permite a los usuarios rastrear ingresos y gastos,
-                        crear categorías personalizadas y ver estadísticas financieras clave.
-                        Construido con Django REST Framework y autenticación por token JWT.
-                        Preparado para potenciar aplicaciones de presupuesto o paneles de finanzas personales.
+                        Mediante DRF he desarrollado esta aplicación, la cual busca ir un paso más allá, no solo quedandose en CRUDs básicos orientados a gastos e ingresos, si no implementando
+                        sistemas de personalización para el usuario, como las categorias, gastos o ingresos recurrentes, descarga de datos en diferentes tipos de archivos, presupuestos, objetivos... 
                      </p>
                   </div>
                   <a href="https://django-api.unaimunoz.dev/" target="_blank" class="btn tj-btn-primary">¡Visítalo!<i class="fal fa-arrow-right"></i></a>
@@ -646,11 +643,11 @@
             <div class="portfolio_description">
                <h2 class="title">Descripción del Proyecto</h2>
                <div class="desc">
-                  <p>
-                     Esta API proporciona todo lo necesario para gestionar las finanzas personales básicas:
-                     autenticación de usuario, seguimiento de ingresos y gastos, organización por categorías,
-                     visualización de saldo y exportación de datos. Está diseñada para ser el backend de una aplicación completa
-                     de finanzas, siguiendo las mejores prácticas REST y con un código limpio y escalable.
+                  <p> 
+                     Se ha buscado en todo momento sincronía entre todos los modelos y rutas que componen la app. 
+                     Ha sido una prioridad buscar que sea una aplicación bien construida desde un comienzo para generar robustez a la hora de  ser escalada.
+                     Cuenta con rutas solamente permitidas a administradores o miembros del staff. La organización por categorías, seguimientos de gastos e ingresos, visualizaciones de saldo,
+                     exportación de datos y la visualización de datos avanzados para el usuario se colocan como los puntos fuertes de esta API RESTful.
                   </p>
                </div>
             </div>
@@ -713,7 +710,7 @@
                   <div class="works-content-area wow fadeInUp" data-wow-delay=".8s">
                      <div class="works-content-item">
                         <h6 class="title">Educación</h6>
-                        <div class="works-content-box">
+                        <div class="works-content-box">`
                            <div class="works-item">
                               <h5 class="title">Desarrollador Backend (Autodidacta)</h5>
                               <h6 class="sub-title">Especializado en Python</h6>

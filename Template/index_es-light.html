@@ -237,11 +237,12 @@
                               <h2 class="title">Mi camino en el desarrollo Backend.</h2>
                               <div class="desc">
                                  <p class="lead">
-                                    Desde que comencé mi camino en el desarrollo backend, me he dedicado a dominar Python, Django y las APIs REST.
-He construido proyectos reales desde cero, incluyendo sistemas de autenticación, gestores de tareas y aplicaciones impulsadas por APIs.
-
-He aprendido a través de la experiencia práctica, la práctica constante y una pasión por el código limpio y escalable.
-Puede que no venga de un entorno tradicional, pero construyo con la mentalidad de un profesional.
+                                    Desde que comencé mi viaje en el desarrollo backend, me he dedicado a dominar Python y sus
+                                    framework principales, Django, FastAPI y Flask. He construido proyectos reales desde cero, incluyendo sistemas de autenticación, 
+                                    APIs RESTful bien estructuradas, y aplicaciones con lógica de negocio compleja.
+                                    He aprendido a través de la experiencia práctica, la práctica constante y una pasión 
+                                    por el código limpio y escalable. Puede que no venga de un entorno tradicional, 
+                                    pero construyo con la mentalidad de un profesional.
                                  </p>
                               </div>
                               <!-- <div class="about-button d-flex">
@@ -296,11 +297,12 @@ Puede que no venga de un entorno tradicional, pero construyo con la mentalidad d
                            <h3 class="title"><button data-mfp-src="#portfolio-wrapper1"
                                  class="modal-popup">API de reservas de cine</button></h3>
                            <p class="desc">
-                              El proyecto es una API RESTful construida con FastAPI.
-Permite a los usuarios explorar películas, géneros y horarios a través de endpoints bien estructurados.
-
-El proyecto se centra en una arquitectura limpia, autenticación segura basada en tokens y diseño de base de datos relacional con PostgreSQL.
-Está diseñado para ser escalable y listo para integrarse con un frontend o una app móvil. Contenerizado con Docker para un despliegue sencillo.
+                              Esta API RESTful ha sido construida con el framework FastAPI.
+                              Permite a los usuarios explorar películas, géneros y horarios a través de endpoints bien estructurados.
+                              Se centra en una arquitectura limpia, autenticación segura basada en tokens JSON Web y 
+                              diseño de base de datos relacional con PostgreSQL. La API está integrada en un frontend, lista para demostrar su uso.
+                              Está diseñado para ser escalable y lista para integrarse con cualquier frontend o app móvil.
+                              Preparado con Docker para un despliegue sencillo y un uso global.
                            </p>
                         </div>
                         <ul class="project_tags">
@@ -333,9 +335,9 @@ Está diseñado para ser escalable y listo para integrarse con un frontend o una
                            <h3 class="title" style="white-space: nowrap;"><button data-mfp-src="#portfolio-wrapper2"
                                  class="modal-popup">API de gestión de finanzas</button></h3>
                            <p class="desc">
-                              Una API RESTful construida con Django REST Framework para ayudar a los usuarios a gestionar sus finanzas personales.
-                              Permite el seguimiento de ingresos y gastos, planificación de presupuestos e informes financieros.
-                              Incluye autenticación JWT, operaciones CRUD y validación de datos para garantizar precisión y seguridad.
+                              El framework utilizado para construir esta API RESTful ha sido Django REST Framework. Creada para ayudar a los usuarios a gestionar sus finanzas personales.
+                              Soporta el seguimiento de ingresos y gastos individuales o concurrentes, planificación de presupuestos, objetivos, categorias personalizables e informes financieros entre otras características.
+                              Cuenta con autenticación basada en JSON Web token y validación de datos estricta para garantizar precisión y seguridad en todo momento.
                            </p>
                         </div>
                         <ul class="project_tags">
@@ -478,8 +480,8 @@ Está diseñado para ser escalable y listo para integrarse con un frontend o una
                   <h2 class="title">FastAPI Cinema Booking service</h2>
                   <div class="desc">
                       <p>
-                        API Restful limpia y eficiente que entrega datos y horarios de películas con seguridad y escalabilidad en mente.
-                        Construido para proporcionar una base sólida backend para aplicaciones relacionadas con el cine.
+                        Con esta API RESTful he buscado la eficiencia en la entrega de datos con seguridad y escabilidad siempre en mente.
+                        Esta lista para proporcionar una base sólida backend para aplicaciones relacionadas con el cine. Esta lista para implementar sistemas de pago.
                      </p>
                   </div>
                   <a href="https://cinema.unaimunoz.dev/" target="_blank" class="btn tj-btn-primary">¡Visítalo!<i class="fal fa-arrow-right"></i></a>
@@ -521,11 +523,11 @@ Está diseñado para ser escalable y listo para integrarse con un frontend o una
                <h2 class="title">Descripción del Proyecto</h2>
                <div class="desc">
                   <p>
-                     Esta es una API RESTful de gestión de reservas de cine diseñada como un proyecto de muestra
-                     para demostrar habilidades backend. Proporciona autenticación de usuario segura con JWT,
-                     permitiendo a los usuarios explorar películas, gestionar sesiones, hacer reservas de asientos y
-                     rastrear su historial de reservas. La API también soporta el bloqueo de asientos para evitar dobles
-                     reservas e incluye un sistema de reseñas para películas.
+                     La gestión de reservas de cine cuenta con varios desafios a la hora de diseñar el backend. 
+                     La reserva de asientos y la prevención de reservas duplicadas ha estado en mente en todo momento.
+                     Se permite a los usuarios explorar películas y sus detalles, hacer reservas de asientos, asi como rastrear el historial completo de reservas.
+                     Incluye un sistema de reseñas para películas. La mayoría de los endpoints de películas y sesiones están protegidos para administradores o miembros de staff.
+                     Cuenta con validación por serializadores y validación extra para aportar seguridad al sistema.
                   </p>
                </div>
             </div>
@@ -593,11 +595,8 @@ Está diseñado para ser escalable y listo para integrarse con un frontend o una
                   <h2 class="title">Django Personal Finances API</h2>
                   <div class="desc">
                      <p>
-                        Un backend fiable y seguro para gestionar finanzas personales.
-                        Esta API RESTful permite a los usuarios rastrear ingresos y gastos,
-                        crear categorías personalizadas y ver estadísticas financieras clave.
-                        Construido con Django REST Framework y autenticación por token JWT.
-                        Preparado para potenciar aplicaciones de presupuesto o paneles de finanzas personales.
+                        Mediante DRF he desarrollado esta aplicación, la cual busca ir un paso más allá, no solo quedandose en CRUDs básicos orientados a gastos e ingresos, si no implementando
+                        sistemas de personalización para el usuario, como las categorias, gastos o ingresos recurrentes, descarga de datos en diferentes tipos de archivos, presupuestos, objetivos... 
                      </p>
                   </div>
                   <a href="https://django-api.unaimunoz.dev/" target="_blank" class="btn tj-btn-primary">¡Visítalo!<i class="fal fa-arrow-right"></i></a>
